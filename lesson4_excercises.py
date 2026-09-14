@@ -42,3 +42,8 @@ def calculate_area(width, height):
 depth = 10
 volume = calculate_area(4, 8) * depth
 
+# Part B
+
+def is_even(number):
+    return number % 2 == 0
+
