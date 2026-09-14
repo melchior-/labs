@@ -99,4 +99,15 @@ def create_profile(name, city, active):
 name = "Martin"
 create_profile(name, city='Unknown', active=True)
 
+calculate_price(price, discount=20, quantity=4)
+
+# INVALID default-parameter ordering:
+# def example(a=1, b):
+#     return a + b
+#
+# This is invalid because Python requires all non-default parameters
+# (like b) to come before any default parameters (like a=1).
+# Otherwise, Python cannot reliably know which arguments are required
+# and which ones have default values.
+
 
