@@ -145,3 +145,10 @@ def average_score(students):
         total_score += student["score"]
     return total_score / number_of_students
 
+def get_active_users(users):
+    active_users = []
+    for user in users:
+        if user["active"]:
+            active_users.append(user)
+    return active_users
+        
