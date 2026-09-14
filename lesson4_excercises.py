@@ -138,3 +138,10 @@ def find_student(students, name):
             return student
     return None
 
+def average_score(students):
+    number_of_students = len(students)
+    total_score = 0
+    for student in students:
+        total_score += student["score"]
+    return total_score / number_of_students
+
