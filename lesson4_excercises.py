@@ -62,3 +62,7 @@ def classify_score(score):
 def full_name(first_name, last_name):
     return f"{first_name} {last_name}"
 
+def calculate_discount(price, percent):
+    discount = percent / 100
+    return price * discount
+
