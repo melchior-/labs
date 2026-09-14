@@ -47,3 +47,8 @@ volume = calculate_area(4, 8) * depth
 def is_even(number):
     return number % 2 == 0
 
+def get_larger(a, b):
+    if a >= b:
+        return a
+    else:
+        return b
