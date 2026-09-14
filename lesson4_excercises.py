@@ -92,3 +92,11 @@ price = 150
 
 calculate_price(price, quantity=1, discount=0)
 
+def create_profile(name, city, active):
+    dict = {"name" : name, "city" : city, "active" : active}
+    return dict
+
+name = "Martin"
+create_profile(name, city='Unknown', active=True)
+
+
