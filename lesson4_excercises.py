@@ -63,7 +63,7 @@ def full_name(first_name, last_name):
     return f"{first_name} {last_name}"
 
 def calculate_discount(price, percent):
-    discount = percent / 100
+    discount = (100 - percent) / 100
     return price * discount
 
 def print_result():
@@ -82,4 +82,13 @@ def greet(name, greeting):
 name = "Martin"
 
 greet(name, greeting="Hello")
+
+def calculate_price(price, quantity, discount):
+    discount = (100 - discount) / 100
+    total_price = price * quantity * discount
+    return total_price
+
+price = 150
+
+calculate_price(price, quantity=1, discount=0)
 
