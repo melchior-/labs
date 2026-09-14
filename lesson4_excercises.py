@@ -125,3 +125,10 @@ def count_even(numbers):
             count += 1
     return count
 
+def get_long_words(words, minimum_length):
+    long_words = []
+    for word in words:
+        if len(word) >= minimum_length:
+            long_words.append(word)
+    return long_words
+
