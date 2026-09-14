@@ -52,3 +52,10 @@ def get_larger(a, b):
         return a
     else:
         return b
+    
+def classify_score(score):
+    if score >= 60:
+        return "PASS"
+    else:
+        return "FAIL"
+
