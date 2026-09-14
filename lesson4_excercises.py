@@ -110,4 +110,11 @@ calculate_price(price, discount=20, quantity=4)
 # Otherwise, Python cannot reliably know which arguments are required
 # and which ones have default values.
 
+# Part D
+
+def calculate_total(numbers):
+    sum = 0
+    for number in numbers:
+        sum += numbers
+    return sum
 
