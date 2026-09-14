@@ -66,3 +66,12 @@ def calculate_discount(price, percent):
     discount = percent / 100
     return price * discount
 
+def print_result():
+    result = "lol"
+    print(result) # Here, result will be printed in the terminal
+
+def get_result():
+    result = "lol"
+    return result # Here nothing will print, instead the string will be returned to the caller.
+
+# Part C
