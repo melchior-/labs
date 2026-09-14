@@ -75,3 +75,11 @@ def get_result():
     return result # Here nothing will print, instead the string will be returned to the caller.
 
 # Part C
+
+def greet(name, greeting):
+    print(f"{greeting} {name}")
+
+name = "Martin"
+
+greet(name, greeting="Hello")
+
