@@ -59,3 +59,6 @@ def classify_score(score):
     else:
         return "FAIL"
 
+def full_name(first_name, last_name):
+    return f"{first_name} {last_name}"
+
