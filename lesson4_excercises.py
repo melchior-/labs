@@ -132,3 +132,9 @@ def get_long_words(words, minimum_length):
             long_words.append(word)
     return long_words
 
+def find_student(students, name):
+    for student in students:
+        if student["name"] == name:
+            return student
+    return None
+
