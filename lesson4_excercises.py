@@ -22,3 +22,23 @@ def greet(name):
 def introduce(name, city):
     print(f"Hello {name}, you are from {city}")
 
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b): # This is a parameter
+    return a / b
+
+divide(10, 2) # This is an argument
+
+def calculate_area(width, height):
+    return width * height
+
+depth = 10
+volume = calculate_area(4, 8) * depth
+
