@@ -30,3 +30,13 @@ modify_global()
 
 # We get UnboundLocalError: cannot access local variable 'number' where it is not associated with a value
 # if we acces number without the global statement.
+
+def outer():
+    message = "Hello from outer"
+
+    def inner():
+        print(message)  # Enclosing-scope lookup: finds message from outer()
+
+    inner()
+
+outer()
