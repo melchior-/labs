@@ -284,6 +284,17 @@ def character_frequency(word):
         dict[char] = dict[char] + 1
     return dict
 
+def count_characters(text):
+    frequencies = {}
+
+    for char in text:
+        if char in frequencies:
+            frequencies[char] += 1
+        else:
+            frequencies[char] = 1
+
+    return frequencies
+
 def posnegzero(numbers):
     dict = {"pos":0, "neg":0, "zero":0}
 
@@ -318,3 +329,5 @@ if __name__ == "__main__":
     print(summary_string(participants[0]))
 
     print(is_palindrome("anna"))
+
+    print(count_characters("addkaslmlkdm"))
