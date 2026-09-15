@@ -99,4 +99,15 @@ def describe_scores(student_name, *scores):
 result = describe_scores("John", 43,43,234,1,43,24,1)
 print(result)
 
+# Part C
+
+def positional(a, b, c):
+    return a + b + c
+
+numbers = [10, 20, 30]
+result = positional(*numbers)
+print(result)
+
+
+
     
