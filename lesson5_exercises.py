@@ -40,3 +40,14 @@ def outer():
     inner()
 
 outer()
+
+# Part B
+
+def add_all(*numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+total = add_all(2321,4214,34,532,5532,432,4)
+print(total)
