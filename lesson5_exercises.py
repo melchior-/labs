@@ -51,3 +51,18 @@ def add_all(*numbers):
 
 total = add_all(2321,4214,34,532,5532,432,4)
 print(total)
+
+def average(*numbers):
+    if len(numbers) == 0:
+        print("No numbers were provided")
+        return 0
+    else:
+        total = 0
+        for number in numbers:
+            total += number
+        average = total / len(numbers)
+        return average
+
+print(average())
+print(average(231,3,4,1,43242,123,2))
+
