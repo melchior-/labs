@@ -66,3 +66,37 @@ def average(*numbers):
 print(average())
 print(average(231,3,4,1,43242,123,2))
 
+def longest_word(*words):
+    longest_length = 0
+    for word in words:
+        if len(word) >= longest_length:
+            longest_length = len(word)
+    return longest_length
+
+longest = longest_word("abba", "kadabra", "lol")
+print(longest)
+
+def build_sentence(separator, *words):
+    sentence = ""
+    for word in words:
+        sentence += f"{word}{separator}"
+    return sentence
+
+sentence = build_sentence(" ", "this", "is", "fun")
+print(sentence)
+
+def describe_scores(student_name, *scores):
+    total = 0
+    for score in scores:
+        total += score
+    average = total / len(scores)
+    sentence = f"{student_name} Scores: "
+    for score in scores:
+        sentence += f"{score} "
+    sentence += f"Average: {average}"
+    return sentence
+
+result = describe_scores("John", 43,43,234,1,43,24,1)
+print(result)
+
+    
