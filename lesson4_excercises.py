@@ -331,3 +331,10 @@ if __name__ == "__main__":
     print(is_palindrome("anna"))
 
     print(count_characters("addkaslmlkdm"))
+
+    total = 100
+
+    def add_tax():
+        return total * 1.25
+
+    print(add_tax())
