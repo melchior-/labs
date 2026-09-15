@@ -108,6 +108,16 @@ numbers = [10, 20, 30]
 result = positional(*numbers)
 print(result)
 
+tuple = ("Martin", "Pettersson", "Stockholm")
+
+def tuple_function(first_name, last_name, city):
+    print(first_name)
+    print(last_name)
+    print(city)
+
+tuple_function(*tuple)
+
+
 
 
     
