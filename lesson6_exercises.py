@@ -19,3 +19,9 @@ def even_numbers():
     even = [n for n in range(1, 101) if n % 2 == 0]
 
 print(even_numbers())
+
+def convert_names(names):
+    converted = [name.strip().title() for name in names]
+    return converted
+
+print(convert_names(["martin", "hilda"]))
