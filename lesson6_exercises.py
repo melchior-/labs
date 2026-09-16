@@ -33,3 +33,9 @@ def passing_scores(scores):
 
 scores = [43, 53, 65, 90, 123, 12]
 print(passing_scores(scores))
+
+def label_scores(scores):
+    labels = ["PASS" if score >= 60 else "FAIL" for score in scores]
+    return labels
+
+print(label_scores(scores))
