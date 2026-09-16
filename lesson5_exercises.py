@@ -249,7 +249,16 @@ def count_words(*sections):
 result = count_words("This is a sentence", "lol", "Roses are red violets are blue")
 print(result)
 
+# Part G
 
-    
+default_dict = {"name" : "martin", "age" : 35, "strong" : True}
+
+def merge_settings(defaults, **overrides):
+    return_dict = defaults
+    for key, value in overrides.items():
+        return_dict[key] = value
+    return return_dict
+
+print(merge_settings(default_dict, color="silver", bank="nordea"))
 
 
