@@ -283,5 +283,50 @@ def statistics_function(*numbers):
 
 print(statistics_function(1,2,3,4,5,6,24))
 
+# Five predict-the-output questions
+
+#1 What is printed?
+
+x = 10
+
+def func():
+    x = 20
+    print(x)
+
+func()
+print(x)
+
+#2 What is printed?
+
+count = 5
+
+def update():
+    global count
+    count += 2
+
+update()
+print(count)
+
+#3 What is printed?
+
+def outer():
+    name = "Martin"
+
+    def inner():
+        print(name)
+
+    inner()
+
+outer()
+
+# 4
+value = 100
+
+def demo():
+    value = 50
+    return value
+
+print(demo())
+print(value)
 
 
