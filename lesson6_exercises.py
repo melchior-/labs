@@ -56,3 +56,7 @@ print(calculate_total_comp([1, 2, 3, 4, 5]))
 print(get_long_words_comp(["hej", "asdf", "martin"], 4))
 print(count_even_comp([2, 4, 6, 8, 13, 124, 432, 43]))
 
+# Part B
+
+
+

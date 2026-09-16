@@ -261,4 +261,16 @@ def merge_settings(defaults, **overrides):
 
 print(merge_settings(default_dict, color="silver", bank="nordea"))
 
+def call_summary(function_name, *args, **kwargs):
+    return_string = f"{function_name}("
+    for arg in args:
+        return_string += f"{arg},"
+    for key, value in kwargs.items():
+        return_string += f"{key}={value},"
+    return_string = return_string[:-1]
+    return_string += f")"
+    return return_string
+
+print(call_summary("martin_func", 12, 32, name="martin", age=12))
+
 
