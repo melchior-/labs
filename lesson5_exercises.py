@@ -117,7 +117,139 @@ def tuple_function(first_name, last_name, city):
 
 tuple_function(*tuple)
 
+# Use starred assignment: first, *middle, last = values. Test with several list lengths.
 
+# * in a function definition means that there are one or several arguments to be passed.
+# * in a function call means that the argument will be unpacked.
+
+# Part D
+
+def show_profile(**info):
+    for key, value in info.items():
+        print(key, value)
+
+show_profile(name = "harry", age = 12, profession = "wizard")
+
+def build_product(name, price, **metadata):
+    dict = metadata
+    dict["name"] = name
+    dict["price"] = price
+    return dict
+
+result = build_product(name="iPhone", price=140, color = "black", size = 128)
+for key, value in result.items():
+    print(key, value)
+
+def create_settings(**settings):
+    dict = {}
+    for key, value in settings.items():
+        if value is not None:
+            dict[key] = value
+    return dict
+
+result = create_settings(color="black", mode=None, os = "Windows")
+
+for key, value in result.items():
+    print(key, value)
+
+def normal_function(name, job, age):
+    print(name)
+    print(job)
+    print(age)
+
+dict = {"name" : "Martin", "age" : 35, "job" : "Programmer"}
+
+normal_function(**dict)
+
+# Part E
+
+def log_event(event_type, *messages, **metadata):
+    dict = {}
+    dict["event_type"] = event_type
+    i = 0
+    for message in messages:
+        i += 1
+        dict[f"message_{i}"] = message
+    for key, value in metadata.items():
+        dict[key] = value
+    return dict
+
+result = log_event("party", "hello", "Stockholm", "Lexicon", date="September 15", weather="sunny")
+
+for key, value in result.items():
+    print(key, value)
+
+def calculate_order(customer, *prices, **options):
+    total = 0
+    discount_percent = 0
+    shipping_fee = 0
+    if "discount" in options:
+        discount_percent = options["discount"]
+    if "fee" in options:
+        shipping_fee = options["fee"]
+    for price in prices:
+        total += price
+    total += shipping_fee
+    discount = (100 - discount_percent) / 100
+    total *= discount
+    return (customer, total)
+
+result = calculate_order("Martin", 42, 432, 234, 532, fee = 120, discount = 20)
+print(result)
+
+# Creates a 3D vector, more readable than with using **kwargs
+def create_vector(x, y, z):
+    return [x, y, z]
+
+# Using **kwargs, less readable than the one above.
+def create_vector_kwargs(**coordinates):
+    vector = []
+    for value in coordinates.values():
+        vector.append(value)
+    return vector
+
+vector1 = create_vector_kwargs(a = 1, b = 2, c = 3, d = 4, e = 5)
+vector2 = create_vector_kwargs(a = 1, b = 2, c = 3, d = 4, e = 5, f = 432, g = 52)
+vector3 = create_vector_kwargs(a = 1, b = 2, c = 3, d = 4, e = 5, f = 432, g = 52, h = 123,  i = 432)
+
+print(vector1, vector2, vector3)
+
+# Part F
+
+# Each section is a string, section keys are numbered
+def create_report(title, *sections, **metadata):
+    dict = {}
+    dict["title"] = title
+    i = 0
+    for section in sections:
+        i += 1
+        dict[f"section_{i}"] = section
+    for key, value in metadata.items():
+        dict[key] = value
+    return dict
+
+report = create_report("Master Thesis", "Introduction", "Method", "Results", pages=120, author = "Martin", department = "Lexicon", version = 1.0, confidential = True, date = "September 15 2026")
+
+print(report)
+
+def summarize_report(report):
+    for key, value in report.items():
+        print(key, value)
+
+summarize_report(report)
+
+def count_words(*sections):
+    count = 0
+    for section in sections:
+        words = section.split(" ")
+        number_of_words = len(words)
+        count += number_of_words
+    return count
+
+result = count_words("This is a sentence", "lol", "Roses are red violets are blue")
+print(result)
 
 
     
+
+
