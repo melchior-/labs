@@ -273,4 +273,15 @@ def call_summary(function_name, *args, **kwargs):
 
 print(call_summary("martin_func", 12, 32, name="martin", age=12))
 
+def statistics_function(*numbers):
+    count = len(numbers)
+    maximum = max(numbers)
+    minimum = min(numbers)
+    total = sum(numbers)
+    average = total / count
+    return count, maximum, minimum, total, average
+
+print(statistics_function(1,2,3,4,5,6,24))
+
+
 
