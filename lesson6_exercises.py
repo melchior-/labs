@@ -14,3 +14,8 @@ def squares_comprehension():
     return squares
 
 print(squares_comprehension())
+
+def even_numbers():
+    even = [n for n in range(1, 101) if n % 2 == 0]
+
+print(even_numbers())
