@@ -39,3 +39,20 @@ def label_scores(scores):
     return labels
 
 print(label_scores(scores))
+
+def calculate_total_comp(numbers):
+    total = sum(n for n in numbers)
+    return total
+
+def get_long_words_comp(words, minimum_length):
+    long_words = [word for word in words if len(word) >= minimum_length]
+    return long_words
+
+def count_even_comp(numbers):
+    evens = [n for n in numbers if n % 2 == 0]
+    return len(evens)
+
+print(calculate_total_comp([1, 2, 3, 4, 5]))
+print(get_long_words_comp(["hej", "asdf", "martin"], 4))
+print(count_even_comp([2, 4, 6, 8, 13, 124, 432, 43]))
+
