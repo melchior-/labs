@@ -25,3 +25,11 @@ def convert_names(names):
     return converted
 
 print(convert_names(["martin", "hilda"]))
+
+def passing_scores(scores):
+    pass_threshold = 60
+    passed = [s for s in scores if s >= pass_threshold]
+    return passed
+
+scores = [43, 53, 65, 90, 123, 12]
+print(passing_scores(scores))
