@@ -183,3 +183,14 @@ students_descending = sorted(students, key = lambda student: student["score"], r
 
 print(students_ascending)
 print(students_descending)
+
+products = [
+    {"name" : "Laptop", "price": 12000},
+    {"name" : "iPhone", "price": 18000},
+    {"name" : "Keyboard", "price": 2000},
+    {"name" : "Mouse", "price": 1500}
+]
+
+sorted_products = sorted(products, key = lambda product: product["price"])
+print(products)
+
