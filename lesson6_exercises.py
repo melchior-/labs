@@ -217,6 +217,6 @@ print(sorted_items)
 sorted_items_lambda = sorted(items, key=lambda item: len(item))
 print(sorted_items_lambda)
 
-
+# Part F
 
 
