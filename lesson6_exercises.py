@@ -155,3 +155,6 @@ length1 = [1,2,3,4,5]
 length2 = [1,2,3,4,5,6,7]
 combined = list(zip(length1, length2))
 print(combined)
+
+for a, b in zip(length1, length2):
+    print(a, b)
