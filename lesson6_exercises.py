@@ -121,7 +121,17 @@ numbers = [32,243,52,4,52,66,345,73,54,13,2]
 threshold = 70
 print_above_threshold(numbers, 70)
 
+numbers = [1, 2, 3, 4, 5, 6, 7]
 
+# Original loop
+
+for i in range(len(numbers)):
+    print(f"{i}. {numbers[i]}")
+
+# Enumerate, this one is more readable
+
+for i, number in enumerate(numbers):
+    print(f"{i}. {number}")
 
 
 
