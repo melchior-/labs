@@ -194,3 +194,14 @@ products = [
 sorted_products = sorted(products, key = lambda product: product["price"])
 print(products)
 
+people = [
+    {"first_name" : "Martin", "last_name" : "Pettersson"},
+    {"first_name" : "Anna", "last_name" : "Bengtsson"},
+    {"first_name" : "John", "last_name" : "Smith"},
+    {"first_name" : "Bob", "last_name" : "Charles"},
+    {"first_name" : "John", "last_name" : "Tolkien"},
+    {"first_name" : "Harry", "last_name" : "Potter"}
+]
+
+sorted_people = sorted(people, key = lambda person: person["last_name"])
+print(sorted_people)
