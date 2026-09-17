@@ -167,7 +167,19 @@ print(a, b)
 # Part E
 
 words = ["martin", "hej", "lol", "Python", "America"]
-
 sorted_words = sorted(words, key = len)
-
 print(sorted_words)
+
+students = [
+    {"name" : "Martin", "score" : 100},
+    {"name" : "Anna", "score" : 20},
+    {"name" : "Sara", "score" : 30},
+    {"name" : "Hilda", "score" : 80},
+    {"name" : "Peter", "score" : 70}
+]
+
+students_ascending = sorted(students, key = lambda student: student["score"])
+students_descending = sorted(students, key = lambda student: student["score"], reverse = True)
+
+print(students_ascending)
+print(students_descending)
