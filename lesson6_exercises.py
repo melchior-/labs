@@ -58,5 +58,15 @@ print(count_even_comp([2, 4, 6, 8, 13, 124, 432, 43]))
 
 # Part B
 
+def squares_dict():
+    squares_dict = {n: n ** 2 for n in range(1,11)}
+    return squares_dict
 
+print(squares_dict())
+
+def words_length(words):
+    lengths = {w: len(w) for w in words}
+    return lengths
+
+print(words_length(["martin", "sara", "anna"]))
 
