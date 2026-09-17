@@ -205,3 +205,18 @@ people = [
 
 sorted_people = sorted(people, key = lambda person: person["last_name"])
 print(sorted_people)
+
+def sort_key(item):
+    return len(item)
+
+items = ["hello", "this", "is", "an", "item"]
+
+sorted_items = sorted(items, key=sort_key)
+print(sorted_items)
+
+sorted_items_lambda = sorted(items, key=lambda item: len(item))
+print(sorted_items_lambda)
+
+
+
+
