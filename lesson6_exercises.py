@@ -112,6 +112,15 @@ tasks = ["Clean the house", "Go shopping", "Go to work", "Play games"]
 for i, task in enumerate(tasks, start=1):
     print(f"{i}. {task}")
 
+def print_above_threshold(numbers, threshold):
+    for i, number in enumerate(numbers):
+        if (number >= threshold):
+            print(f"{i} : {number}")
+
+numbers = [32,243,52,4,52,66,345,73,54,13,2]
+threshold = 70
+print_above_threshold(numbers, 70)
+
 
 
 
