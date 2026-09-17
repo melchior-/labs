@@ -100,5 +100,17 @@ student_dict = {student["name"]: "PASS" if student["score"] >= 70 else "FAIL" fo
 
 print(student_dict)
 
+tracks = ["Opalite", "Cheri Cheri Lady", "Merry Christmas", "Happy Birthday"]
+
+for i, track in enumerate(tracks, start=1):
+    print(f"{i}. {track}")
+
+tasks = ["Clean the house", "Go shopping", "Go to work", "Play games"]
+
+for i, task in enumerate(tasks, start=1):
+    print(f"{i}. {task}")
+
+
+
 
 
