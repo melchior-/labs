@@ -88,4 +88,17 @@ dict = {product["name"]: product["price"] for product in products if product["pr
 
 print(dict)
 
+students = [
+    {"name" : "Martin", "score" : 100},
+    {"name" : "Anna", "score" : 20},
+    {"name" : "Sara", "score" : 30},
+    {"name" : "Hilda", "score" : 80},
+    {"name" : "Peter", "score" : 70}
+]
+
+student_dict = {student["name"]: "PASS" if student["score"] >= 70 else "FAIL" for student in students}
+
+print(student_dict)
+
+
 
