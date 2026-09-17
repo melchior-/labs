@@ -84,9 +84,9 @@ products = [
 ]
 threshold = 2000
 
-dict = {product["name"]: product["price"] for product in products if product["price"] <= threshold}
+threshold_dict = {product["name"]: product["price"] for product in products if product["price"] <= threshold}
 
-print(dict)
+print(threshold_dict)
 
 students = [
     {"name" : "Martin", "score" : 100},
@@ -141,5 +141,12 @@ scores = [100, 32, 42, 52]
 combined = list(zip(names, scores))
 
 print(combined)
+
+keys = [1, 2, 3, 4, 5, 6]
+values = ["Laptop", "iPhone", "Mouse", "Keyboard", "Mp3 Player", "Headphones"]
+
+products = dict(zip(keys, values))
+
+print(products)
 
 
