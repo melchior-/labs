@@ -70,3 +70,9 @@ def words_length(words):
 
 print(words_length(["martin", "sara", "anna"]))
 
+def normalized_set(words):
+    normalized = {word.strip().lower() for word in words}
+    return normalized
+
+print(normalized_set(["  MARTIN", "martin", "Martin   ", "Sara", "SARA", "Anna"]))
+
