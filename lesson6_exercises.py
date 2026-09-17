@@ -165,3 +165,9 @@ a, b = b, a
 print(a, b)
 
 # Part E
+
+words = ["martin", "hej", "lol", "Python", "America"]
+
+sorted_words = sorted(words, key = len)
+
+print(sorted_words)
