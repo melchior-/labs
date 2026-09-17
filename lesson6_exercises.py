@@ -133,5 +133,7 @@ for i in range(len(numbers)):
 for i, number in enumerate(numbers):
     print(f"{i}. {number}")
 
+# Part D
+
 
 
