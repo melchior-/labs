@@ -76,3 +76,16 @@ def normalized_set(words):
 
 print(normalized_set(["  MARTIN", "martin", "Martin   ", "Sara", "SARA", "Anna"]))
 
+products = [
+    {"name" : "Laptop", "price": 12000},
+    {"name" : "iPhone", "price": 18000},
+    {"name" : "Keyboard", "price": 2000},
+    {"name" : "Mouse", "price": 1500}
+]
+threshold = 2000
+
+dict = {product["name"]: product["price"] for product in products if product["price"] <= threshold}
+
+print(dict)
+
+
