@@ -158,3 +158,8 @@ print(combined)
 
 for a, b in zip(length1, length2):
     print(a, b)
+
+a = 5
+b = 3
+a, b = b, a
+print(a, b)
