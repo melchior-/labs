@@ -135,5 +135,11 @@ for i, number in enumerate(numbers):
 
 # Part D
 
+names = ["Martin", "Bob", "Hilda", "Peter"]
+scores = [100, 32, 42, 52]
+
+combined = list(zip(names, scores))
+
+print(combined)
 
 
