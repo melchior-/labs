@@ -219,4 +219,103 @@ print(sorted_items_lambda)
 
 # Part F
 
+products = [
+    {"name" : "   laptOp", "price": 12000, "category" : "computer", "stock": 10},
+    {"name" : "   iphone  ", "price": 18000, "category" : "phone", "stock": 20},
+    {"name" : "   desktop  ", "price": 14000, "category" : "computer", "stock": 32},
+    {"name" : "   mp3    player  ", "price": 3000, "category" : "music player", "stock": 14},
+    {"name" : "   mouse  ", "price": 500, "category" : "accesory", "stock": 0},
+    {"name" : "keyboard  ", "price": 700, "category" : "accesory", "stock": 17},
+    {"name" : "  headset  ", "price": 1200, "category" : "accesory", "stock": 25},
+    {"name" : "piano  ", "price": 5000, "category" : "instrument", "stock": 53},
+    {"name" : "     guitar", "price": 3000, "category" : "instrument", "stock": 0},
+    {"name" : "   book", "price": 190, "category" : "book", "stock": 62},
+    {"name" : "   flash   memory", "price": 600, "category" : "computer", "stock": 63},
+    {"name" : "   monitor  ", "price": 4000, "category" : "accesory", "stock": 0}
+]
+
+products_dict = [{product["name"].strip().title() for product in products}]
+print(products_dict)
+
+in_stock = [product["name"].strip().title() for product in products if product["stock"] > 0]
+print(in_stock)
+
+categories = {product["category"] for product in products}
+print(categories)
+
+inventory_values = {product["name"].strip().title(): product["price"] * product["stock"] for product in products}
+print(inventory_values)
+
+print("----")
+
+sorted_inventory = sorted(inventory_values.values())
+print(sorted_inventory)
+
+for i, item in enumerate(inventory_values, start=1):
+    print(f"{i}. {item}")
+
+prices = [product["price"] for product in products]
+stock = [product["stock"] for product in products]
+prices_and_stock = list(zip(prices, stock))
+print(prices_and_stock)
+
+names = [product["name"].strip().title() for product in products]
+names_and_prices = list(zip(names, prices))
+print(names_and_prices)
+
+complicated = [product["price"] * 2 for product in products if len(product["name"]) > 3 and product["stock"] > 0]
+print(complicated)
+
+# Imo this looks clearer.
+price_increased_products = []
+for product in products:
+    if product["stock"] > 0 and len(product["name"]) > 3:
+        price_increased_products.append(product["price"]*2)
+print(price_increased_products)
+
+# Part G
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+flat = [value for row in matrix for value in row]
+print(flat)
+
+table = {
+    row: {col: row * col for col in range(1, 11)}
+    for row in range(1, 11)
+}
+
+print(table[3][7]) 
+
+students = [
+    {"name": "Martin", "score": 100},
+    {"name": "Anna", "score": 20},
+    {"name": "Sara", "score": 30},
+    {"name": "Hilda", "score": 80},
+    {"name": "Peter", "score": 70}
+]
+
+passing_students = {
+    student["name"]: student["score"]
+    for student in students
+    if student["score"] >= 70
+}
+
+print(passing_students)
+
+scores = [343,54,63,63,0,424,242,532,32]
+
+print(all(scores))
+print(any(scores))
+
+scores = [0, 0, None]
+
+print(all(scores))
+print(any(scores))
+
+
 
