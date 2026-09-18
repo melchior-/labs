@@ -248,10 +248,10 @@ print(inventory_values)
 
 print("----")
 
-sorted_inventory = sorted(inventory_values.values())
+sorted_inventory = sorted(inventory_values.items(), key=lambda item: item[1])
 print(sorted_inventory)
 
-for i, item in enumerate(inventory_values, start=1):
+for i, item in enumerate(sorted_inventory, start=1):
     print(f"{i}. {item}")
 
 prices = [product["price"] for product in products]
