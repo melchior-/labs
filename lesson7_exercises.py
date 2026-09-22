@@ -125,6 +125,11 @@ class Student():
             return "PASS"
         return "FAIL"
 
+    def update_score(self, new_score):
+        if new_score > 100 or new_score < 0:
+            raise ValueError("Must be between 0 and 100.")
+        self.score = new_score
+
 student1 = Student("Anna", 70)
 student2 = Student("Charles", 80)
 student3 = Student("Martin", 55)
@@ -150,11 +155,12 @@ class Teacher():
         self.name = name
 
 class Course():
-    students = []
+    school = "Lexicon" # Class attribute, belongs as an attribute because it spans over all courses.
     
     def __init__(self, name, teacher):
         self.name = name
         self.teacher = teacher
+        self.students = []
 
     def add_student(self, student):
         self.students.append(student)
@@ -164,6 +170,9 @@ class Course():
 
     def passing_students(self):
         return [student for student in self.students if student.get_status() == "PASS"]
+
+    def students_above_threshold(self, threshold):
+        return [student for student in self.students if student.score > threshold]
 
     def course_summary(self):
         print(f"Teacher: {self.teacher.name} Class: {self.name}")
@@ -193,6 +202,13 @@ for student in passing_students:
     print(f"{student.name} {student.score}")
 
 course1.course_summary()
+
+course2 = Course("Python", teacher1)
+course2.add_student(student2)
+course2.add_student(student3)
+print(course2.course_summary())
+
+
 
 
 
