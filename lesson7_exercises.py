@@ -4,6 +4,11 @@ class Book():
         self.author = author 
         self.pages = pages
 
+    def is_long(self):
+        if (self.pages > 300):
+            return True
+        return False
+
 book1 = Book("A Dance with Dragons", "George RR Martin", 1100)
 book2 = Book("Frankenstein", "Mary Shelley", 400)
 book3 = Book("Red Rising", "Pierce Brown", 350)
