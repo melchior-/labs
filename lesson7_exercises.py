@@ -141,3 +141,32 @@ for student in list_of_students:
 passing_students = [student.name for student in list_of_students if student.score >= 70]
 print(passing_students)
 
+# Part E
+
+class Teacher():
+    def __init__(self, name):
+        self.name = name
+
+class Course():
+    students = []
+    
+    def __init__(self, name, teacher):
+        self.name = name
+        self.teacher = teacher
+
+    def add_student(self, student):
+        self.students.append(student)
+
+teacher1 = Teacher("Bob")
+course1 = Course("Java", teacher1)
+
+print(f"{course1.name} {course1.teacher.name}")
+
+course1.add_student(student1)
+course1.add_student(student2)
+course1.add_student(student3)
+
+for student in course1.students:
+    print(f"{student.name}")
+
+
