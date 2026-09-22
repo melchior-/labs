@@ -91,6 +91,9 @@ class Product():
         price_tax = tax_modifier * self.price
         return price_tax
 
+    def update_tax_rate(self, rate):
+        self.tax_rate = rate
+
 product1 = Product("Hammer", 100)
 print(product1.price_with_tax())
 product2 = Product("Mose", 200)
@@ -98,5 +101,12 @@ print(product2.price_with_tax())
 product3 = Product("Keyboard", 400)
 print(product3.price_with_tax())
 
+Product.tax_rate = 35
+print(product1.price_with_tax())
+print(product2.price_with_tax())
+print(product3.price_with_tax())
 
-
+product1.update_tax_rate(45)
+print(product1.tax_rate)
+print(product2.tax_rate)
+print(Product.tax_rate)
