@@ -56,6 +56,21 @@ class BankAccount():
             raise ValueError("Balance cannot be negative")
         self.balance -= amount
 
+class Task():
+    def __init__(self, title, completed=False):
+        self.title = title
+        self.completed = completed
+
+    def complete(self):
+        self.completed = True
+
+    def reopen(self):
+        self.completed = False
+
 ba = BankAccount("Martin", 500)
+ba2 = BankAccount("George", 400)
 ba.withdraw(500)
+print(ba.balance)
+print(ba2.balance)
+
 
