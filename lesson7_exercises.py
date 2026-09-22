@@ -119,6 +119,8 @@ class Student():
         self.score = score
 
     def get_status(self):
+        if self.score > 100 or self.score < 0:
+            raise ValueError("Score must be between 0 and 100.")
         if self.score >= 70:
             return "PASS"
         return "FAIL"
@@ -157,6 +159,16 @@ class Course():
     def add_student(self, student):
         self.students.append(student)
 
+    def number_of_students(self):
+        return len(self.students)
+
+    def passing_students(self):
+        return [student for student in self.students if student.get_status() == "PASS"]
+
+    def course_summary(self):
+        print(f"Teacher: {self.teacher.name} Class: {self.name}")
+        print(f"Number of students: {self.number_of_students()} Passing students: {[student.name for student in self.passing_students()]}")
+
 teacher1 = Teacher("Bob")
 course1 = Course("Java", teacher1)
 
@@ -165,8 +177,22 @@ print(f"{course1.name} {course1.teacher.name}")
 course1.add_student(student1)
 course1.add_student(student2)
 course1.add_student(student3)
+course1.add_student(student4)
+course1.add_student(student5)
+course1.add_student(student6)
 
 for student in course1.students:
     print(f"{student.name}")
+
+# Part F
+
+print(course1.number_of_students())
+
+passing_students = course1.passing_students()
+for student in passing_students:
+    print(f"{student.name} {student.score}")
+
+course1.course_summary()
+
 
 
