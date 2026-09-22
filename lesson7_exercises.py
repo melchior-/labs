@@ -110,3 +110,34 @@ product1.update_tax_rate(45)
 print(product1.tax_rate)
 print(product2.tax_rate)
 print(Product.tax_rate)
+
+# Part D
+
+class Student():
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+
+    def get_status(self):
+        if self.score >= 70:
+            return "PASS"
+        return "FAIL"
+
+student1 = Student("Anna", 70)
+student2 = Student("Charles", 80)
+student3 = Student("Martin", 55)
+student4 = Student("Bob", 45)
+student5 = Student("George", 32)
+student6 = Student("John", 100)
+
+list_of_students = [student1, student2, student3, student4, student5, student6]
+
+for student in list_of_students:
+    print(f"{student.name} {student.score}")
+
+for student in list_of_students:
+    print(f"{student.name} {student.get_status()}")
+
+passing_students = [student.name for student in list_of_students if student.score >= 70]
+print(passing_students)
+
