@@ -1,3 +1,5 @@
+# Part A
+
 class Book():
     def __init__(self, title, author, pages):
         self.title = title
@@ -43,6 +45,8 @@ print(laptop4.model)
 print(laptop4.ram_gb)
 print(laptop4.price)
 
+# Part B
+
 class BankAccount():
     def __init__(self, owner, balance):
         self.owner = owner
@@ -72,5 +76,27 @@ ba2 = BankAccount("George", 400)
 ba.withdraw(500)
 print(ba.balance)
 print(ba2.balance)
+
+# Part C
+
+class Product():
+    tax_rate = 25
+
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def price_with_tax(self):
+        tax_modifier = self.tax_rate / 100 + 1
+        price_tax = tax_modifier * self.price
+        return price_tax
+
+product1 = Product("Hammer", 100)
+print(product1.price_with_tax())
+product2 = Product("Mose", 200)
+print(product2.price_with_tax())
+product3 = Product("Keyboard", 400)
+print(product3.price_with_tax())
+
 
 
