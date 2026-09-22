@@ -14,7 +14,7 @@ print(book1.author)
 print(book1.pages)
 
 class Laptop():
-    def __init__(self, brand, model, ram_gb, price):
+    def __init__(self, brand, model, ram_gb=8, price=7000):
         self.brand = brand
         self.model = model
         self.ram_gb = ram_gb
@@ -25,3 +25,15 @@ laptop2 = Laptop("HP", "Pavilion", 32, 10000)
 laptop3 = Laptop("Apple", "MacBook", 128, 21000)
 
 laptop3.price = 18000
+
+l = Laptop("Dell", "XPS", 16, 8000)
+r = Laptop("Dell", "XPS", 16, 8000)
+
+print(l is r)
+
+laptop4 = Laptop("HP", "SuperLaptop", ram_gb = 64, price = 9000)
+
+print(laptop4.brand)
+print(laptop4.model)
+print(laptop4.ram_gb)
+print(laptop4.price)
