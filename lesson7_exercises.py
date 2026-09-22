@@ -42,3 +42,20 @@ print(laptop4.brand)
 print(laptop4.model)
 print(laptop4.ram_gb)
 print(laptop4.price)
+
+class BankAccount():
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if (self.balance - amount < 0):
+            raise ValueError("Balance cannot be negative")
+        self.balance -= amount
+
+ba = BankAccount("Martin", 500)
+ba.withdraw(500)
+
