@@ -112,3 +112,20 @@ class Device():
         if self.year < 0:
             raise ValueError("Year cannot be negative.")
         is_active = True
+
+class Laptop(Device):
+    def __init__(self, brand, year, ram_gb):
+        super.__init__(brand, year)
+        self.ram_gb = ram_gb
+
+class Phone(Device):
+    def __init__(self, brand, year, color):
+        super.__init__(brand, year)
+        self.color = color
+
+laptop = Laptop("Dell", 2022, 16)
+phone = Phone("Apple", 2025, "white")
+
+laptop.initialize()
+phone.initialize()
+
