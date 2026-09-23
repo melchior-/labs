@@ -52,3 +52,26 @@ class Movie():
 
 # I would choose the dictionary if there is no behavior needed for the movies or repeated objects. If we need validation or logic to be used on the movies I would choose a class.
 
+# Part C
+
+class Account():
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
+class SavingsAccount(Account):
+    def __init__(self, owner, balance, interest_rate):
+        super().__init__(owner, balance)
+        self.interest_rate = interest_rate
+
+account1 = Account("Martin", 1000)
+savings1 = SavingsAccount("Bob", 2000, 10)
+
+print(account1.balance)
+print(account1.owner)
+print(savings1.balance)
+print(savings1.owner)
+print(savings1.interest_rate)
+
+# A SavingsAccount is a type of Account.
+
