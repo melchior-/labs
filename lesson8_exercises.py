@@ -156,6 +156,29 @@ notif = Notification()
 email = EmailNotification()
 sms = SMSNotification()
 
-print(notif.send())
-print(email.send())
-print(sms.send())
+print(notif.send()) # Send is used from base class
+print(email.send()) # Send is used from email class
+print(sms.send()) # Send is used from the SMS class
+
+# Part G
+
+class Report():
+    def __init__(self, author, pages):
+        self.author = author
+        self.pages = pages
+
+    def get_summary(self):
+        print(f"Author: {self.author}, Pages: {self.pages}")
+
+class SalesReport(Report):
+    def __init__(self, author, pages, revenue):
+        super().__init__(author, pages)
+        self.revenue = revenue
+
+    def get_summary(self):
+        super().get_summary()
+        print(f"Revenue: {self.revenue}")
+
+sr = SalesReport("Martin", 100, 10000)
+sr.get_summary()
+
