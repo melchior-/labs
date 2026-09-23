@@ -23,4 +23,12 @@ class Team():
         self.members = [] if members is None else members
 
     def add_member(self, new_member):
-        self.member.append(new_member)
+        self.members.append(new_member)
+
+team1 = Team("Hawks")
+team2 = Team("Lions")
+
+team1.add_member("Martin")
+
+print(team1.members)
+print(team2.members)
