@@ -75,3 +75,29 @@ print(savings1.interest_rate)
 
 # A SavingsAccount is a type of Account.
 
+# Part D
+
+class Employee():
+    def __init__(self, name):
+        self.name = name
+
+    def get_information(self):
+        return self.name
+
+class Developer(Employee):
+    def __init__(self, name):
+        super.__init__(name)
+
+    def programming_language(self):
+        return "Python"
+
+class Manager(Employee):
+    def __init__(self, name):
+        super.__init__(name)
+
+    def manage(self):
+        return "Woof!"
+
+e = Employee("Martin")
+# Cannot run e.programming_language() since e is not a developer subclass instance.
+
