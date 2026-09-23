@@ -129,3 +129,33 @@ phone = Phone("Apple", 2025, "white")
 laptop.initialize()
 phone.initialize()
 
+# Part F
+
+class Notification():
+    def __init__(self):
+        pass
+
+    def send(self):
+        return "Sent from base class!"
+
+class EmailNotification(Notification):
+    def __init__(self):
+        super().__init__()
+
+    def send(self):
+        return "Email!"
+
+class SMSNotification(Notification):
+    def __init__(self):
+        super().__init__()
+
+    def send(self):
+        return "SMS!"
+
+notif = Notification()
+email = EmailNotification()
+sms = SMSNotification()
+
+print(notif.send())
+print(email.send())
+print(sms.send())
