@@ -1,3 +1,5 @@
+# Part A
+
 class BadTeam():
 
     def __init__(self, name, members = []):
@@ -32,3 +34,8 @@ team1.add_member("Martin")
 
 print(team1.members)
 print(team2.members)
+
+# Part B
+
+movie_dict = {"title" : "Forrest Gump", "director" : "Robert Zemeckis", "rating" : 8.0}
+
