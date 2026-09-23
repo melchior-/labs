@@ -39,3 +39,16 @@ print(team2.members)
 
 movie_dict = {"title" : "Forrest Gump", "director" : "Robert Zemeckis", "rating" : 8.0}
 
+class Movie():
+    def __init__(self, title, director, rating):
+        self.title = title
+        self.director = director
+        self.rating = rating
+
+    def is_highly_rated(self):
+        if self.rating >= 7.9:
+            return True
+        return False
+
+# I would choose the dictionary if there is no behavior needed for the movies or repeated objects. If we need validation or logic to be used on the movies I would choose a class.
+
