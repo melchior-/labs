@@ -86,14 +86,14 @@ class Employee():
 
 class Developer(Employee):
     def __init__(self, name):
-        super.__init__(name)
+        super().__init__(name)
 
     def programming_language(self):
         return "Python"
 
 class Manager(Employee):
     def __init__(self, name):
-        super.__init__(name)
+        super().__init__(name)
 
     def manage(self):
         return "Woof!"
@@ -115,12 +115,12 @@ class Device():
 
 class Laptop(Device):
     def __init__(self, brand, year, ram_gb):
-        super.__init__(brand, year)
+        super().__init__(brand, year)
         self.ram_gb = ram_gb
 
 class Phone(Device):
     def __init__(self, brand, year, color):
-        super.__init__(brand, year)
+        super().__init__(brand, year)
         self.color = color
 
 laptop = Laptop("Dell", 2022, 16)
