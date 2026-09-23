@@ -101,3 +101,14 @@ class Manager(Employee):
 e = Employee("Martin")
 # Cannot run e.programming_language() since e is not a developer subclass instance.
 
+# Part E
+
+class Device():
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+
+    def initialize(self):
+        if self.year < 0:
+            raise ValueError("Year cannot be negative.")
+        is_active = True
