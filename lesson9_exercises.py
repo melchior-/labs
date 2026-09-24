@@ -229,14 +229,14 @@ summary = SummaryExporter()
 
 exporters = [exporter, console, text, summary]
 
-for exporter in exporters:
-    print(exporter.export("data"))
+for item in exporters:
+    print(item.export("data"))
 
 pokemon = Pokemon()
 exporters.append(pokemon)
 
-for exporter in exporters:
-    print(exporter.export("data"))
+for item in exporters:
+    print(item.export("data"))
 
 print(exporter.isinstance())
 print(console.isinstance())
