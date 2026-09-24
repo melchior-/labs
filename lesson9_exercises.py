@@ -146,3 +146,32 @@ savings = SavingsAccount("Hilda", 2000, 19)
 
 print(account)
 print(savings)
+
+# Part G
+
+class CPU:
+    def __init__(self, model):
+        self.model = model
+
+class Computer:
+    def __init__(self, brand, cpu):
+        self.brand = brand
+        self.cpu = cpu
+
+    def print_computer(self):
+        print(computer.brand)
+        print(computer.cpu.model)
+
+cpu = CPU("Intel")
+computer = Computer("Dell", cpu)
+computer.print_computer()
+
+# Computer HAS-A CPU makes more sense because the CPU belongs to the computer rather than inherits it.
+
+# Car HAS-A Engine
+# Manager IS-A Employee
+# Course HAS-A Teacher
+# Phone IS-A Device
+
+# Part H
+
