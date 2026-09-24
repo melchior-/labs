@@ -55,3 +55,25 @@ list_of_documents = [pdf1, pdf2, text1, text2]
 
 for document in list_of_documents:
     print(f"{document.title} {document.describe()}")
+
+# Part C
+
+class Printer:
+    def display_status(self):
+        return "Printer"
+
+class Screen:
+    def display_status(self):
+        return "Screen"
+
+printer = Printer()
+screen = Screen()
+
+products = [printer, screen]
+
+for product in products:
+    print(product.display_status())
+
+# It works because both classes implement the same interface
+
+# Part D
