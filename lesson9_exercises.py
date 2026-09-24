@@ -175,3 +175,75 @@ computer.print_computer()
 
 # Part H
 
+class Exporter:
+    def export(self, data):
+        return data
+
+    def __str__(self):
+        return "This is an exporter."
+
+    def isinstance(self):
+        return type(self)
+
+class ConsoleExporter(Exporter):
+    def export(self, data):
+        return f"Export: {data}"
+
+    def __str__(self):
+        return "This is a console exporter."
+
+    def isinstance(self):
+        return type(self)
+
+class TextExporter(Exporter):
+    def export(self, data):
+        return f"Text: {data}"
+
+    def __str__(self):
+        return "This is a text exporter."
+
+    def isinstance(self):
+        return type(self)
+
+class SummaryExporter(Exporter):
+    def export(self, data):
+        return f"Summary: {data}"
+
+    def __str__(self):
+        return "This is a summary exporter."
+
+    def isinstance(self):
+        return type(self)
+
+class Pokemon():
+    def export(self, data):
+        return f"Pokemon {data}"
+
+    def isinstance(self):
+        return type(self)
+
+exporter = Exporter()
+console = ConsoleExporter()
+text = TextExporter()
+summary = SummaryExporter()
+
+exporters = [exporter, console, text, summary]
+
+for exporter in exporters:
+    print(exporter.export("data"))
+
+pokemon = Pokemon()
+exporters.append(pokemon)
+
+for exporter in exporters:
+    print(exporter.export("data"))
+
+print(exporter.isinstance())
+print(console.isinstance())
+
+# ConsoleExporter IS-A Exporter
+# HAS-A means that the class contains some other object rather than being in a relationship with another class.
+
+
+
+
