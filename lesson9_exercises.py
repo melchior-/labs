@@ -122,3 +122,27 @@ print(product3)
 
 str_product = str(product2)
 print(type(str_product))
+
+# Part F
+
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
+    def __str__(self):
+        return f"This is an account with owner {self.owner} and balance {self.balance}."
+
+class SavingsAccount(Account):
+    def __init__(self, owner, balance, interest_rate):
+        super().__init__(owner, balance)
+        self.interest_rate = interest_rate
+
+    def __str__(self):
+        return super().__str__() + f" Interest rate: {self.interest_rate}."
+
+account = Account("Martin", 1000)
+savings = SavingsAccount("Hilda", 2000, 19)
+
+print(account)
+print(savings)
