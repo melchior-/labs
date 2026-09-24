@@ -77,3 +77,28 @@ for product in products:
 # It works because both classes implement the same interface
 
 # Part D
+
+class User:
+    def __init__(self, name):
+        self.name = name
+
+    def isinstance(self):
+        return type(self)
+
+class AdminUser(User):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def isinstance(self):
+        return type(self)
+
+user = User("Martin")
+admin = AdminUser("Hilda")
+word = "String"
+
+print(user.isinstance())
+print(admin.isinstance())
+print(type(word))
+
+# AdminUser is also an instance of User because of inheritance
+
