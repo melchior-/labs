@@ -182,3 +182,57 @@ class SalesReport(Report):
 sr = SalesReport("Martin", 100, 10000)
 sr.get_summary()
 
+# Part H
+
+class User():
+    def __init__(self, username, email):
+        if "@" not in email:
+            raise ValueError("Email must contain @.")
+
+        self.username = username
+        self.email = email
+
+    def present_user(self):
+        print(f"Name: {self.username}, Email: {self.email}")
+
+    def greet(self):
+        print(f"Hello, I am {self.username} with email {self.email}.")
+
+class AdminUser(User):
+    def __init__(self, username, email, privilege):
+        super().__init__(username, email) 
+        self.privilege = privilege
+
+    def get_privilege(self):
+        return self.privilege
+
+    def greet(self):
+        super().greet()
+        print(f"I am an Admin.")
+
+class PremiumUser(User):
+    def __init__(self, username, email, subscription_type):
+        super().__init__(username, email)
+        self.subscription_type = subscription_type
+
+    def get_subscription(self):
+        return self.subscription_type
+
+    def greet(self):
+        super().greet()
+        print(f"I am a Premium User.")
+
+first_user = User("Martin", "martin.pettersson@outlook.com")
+second_user = AdminUser("Hilda", "hilda123@gmail.com", "IT-Admin")
+third_user = PremiumUser("Greg", "greg@yahoo.com", "Six-month")
+
+first_user.present_user()
+second_user.greet()
+third_user.greet()
+first_user.greet()
+third_user.present_user()
+second_user.get_privilege()
+third_user.get_subscription()
+
+# AdminUser is a type of User
+# PremiumUser is (also) a type of User
