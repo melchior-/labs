@@ -102,3 +102,23 @@ print(type(word))
 
 # AdminUser is also an instance of User because of inheritance
 
+# Part E
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def __str__(self):
+        return f"This is a {self.name} with price {self.price}"
+
+product = Product("Laptop", 10000)
+print(product)
+product2 = Product("Phone", 5000)
+product3 = Product("Keyboad", 300)
+
+print(product2)
+print(product3)
+
+str_product = str(product2)
+print(type(str_product))
