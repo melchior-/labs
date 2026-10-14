@@ -28,4 +28,4 @@ CREATE TABLE reviews(
 
 INSERT INTO reviews VALUES(1, 1, 6, "lol");
 
-INSERT INTO reciews VALUES(2, 50, 5, "Good");
+INSERT INTO reviews VALUES(2, 50, 5, "Good");
