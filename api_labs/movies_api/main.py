@@ -113,6 +113,8 @@ def update_movie(movie_id: int, movie_update: MovieUpdate):
 
 # PUT is used to replace the entire resource, while PATCH is used to update only specific fields of the resource.
 
+# What would go wrong if two users added a movie at the same time? How would you fix it?
+# There would be a race condition.
 
 
 
