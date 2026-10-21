@@ -41,6 +41,12 @@ load_movies()  # Load movies from the JSON file at startup
 
 print(f"Loaded {len(movies)} movies from movies.json")  # Print the number of loaded movies for debugging purposes
 
+def save_movies():
+    with open("movies.json", "w") as f:
+        json.dump(movies, f)
+
+save_movies()  # Save movies to the JSON file at startup
+
 @app.get("/movies")
 def get_movies(director: str = None):
     if director:
@@ -69,6 +75,7 @@ def create_movie(movie: Movie):
     new_id = max((m["id"] for m in movies), default=0) + 1
     new_movie = {"id": new_id, "title": movie.title, "director": movie.director, "year": movie.year}
     movies.append(new_movie)
+    save_movies()  # Save the updated movies list to the JSON file
     return new_movie
 
 @app.put("/movies/{movie_id}", dependencies=[Depends(check_key)])
@@ -77,12 +84,14 @@ def replace_movie(movie_id: int, movie: Movie):
     existing["title"] = movie.title
     existing["director"] = movie.director
     existing["year"] = movie.year
+    save_movies()  # Save the updated movies list to the JSON file
     return existing
 
 @app.delete("/movies/{movie_id}", status_code=204, dependencies=[Depends(check_key)])
 def delete_movie(movie_id: int):
     movie = find_movie(movie_id)
     movies.remove(movie)
+    save_movies()  # Save the updated movies list to the JSON file
     return {"message": "Movie deleted successfully"}
 
 class MovieUpdate(BaseModel):
@@ -99,6 +108,7 @@ def update_movie(movie_id: int, movie_update: MovieUpdate):
         existing["director"] = movie_update.director
     if movie_update.year is not None:
         existing["year"] = movie_update.year
+    save_movies()  # Save the updated movies list to the JSON file
     return existing
 
 # PUT is used to replace the entire resource, while PATCH is used to update only specific fields of the resource.
