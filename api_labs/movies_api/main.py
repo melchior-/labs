@@ -1,3 +1,4 @@
+import json
 import os
 
 from dotenv import load_dotenv
@@ -30,6 +31,15 @@ movies = [
     {"id": 2, "title": "The Godfather", "director": "Francis Ford Coppola", "year": 1972},
     {"id": 3, "title": "The Dark Knight", "director": "Christopher Nolan", "year": 2008},
     {"id": 4, "title": "Pulp Fiction", "director": "Quentin Tarantino", "year": 1994}]
+
+def load_movies():
+    global movies
+    with open("movies.json", "r") as f:
+        movies = json.load(f)
+
+load_movies()  # Load movies from the JSON file at startup
+
+print(f"Loaded {len(movies)} movies from movies.json")  # Print the number of loaded movies for debugging purposes
 
 @app.get("/movies")
 def get_movies(director: str = None):
