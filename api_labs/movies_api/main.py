@@ -1,13 +1,15 @@
 import os
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 
 app = FastAPI()
 
 load_dotenv()  # Load environment variables from .env file
-api_key = os.getenv("API_KEY")  # Get the API key from environment variables API key from environment variables
+#api_key = os.getenv("API_KEY")  # Get the API key from environment variables API key from environment variables
+api_key = "3b3705f7b65ee8441272077ef1a5be42" # Loading the API key directly from the .env file for testing purposes
+print(f"Loaded API key: {api_key}")  # Print the loaded API key for debugging purposes
 
 def check_key(provided_key: str):
     if provided_key != api_key:
@@ -52,14 +54,14 @@ class Movie(BaseModel):
     director: str
     year: int
 
-@app.post("/movies", status_code=201)
+@app.post("/movies", status_code=201, dependencies=[Depends(check_key)])
 def create_movie(movie: Movie):
     new_id = max((m["id"] for m in movies), default=0) + 1
     new_movie = {"id": new_id, "title": movie.title, "director": movie.director, "year": movie.year}
     movies.append(new_movie)
     return new_movie
 
-@app.put("/movies/{movie_id}")
+@app.put("/movies/{movie_id}", dependencies=[Depends(check_key)])
 def replace_movie(movie_id: int, movie: Movie):
     existing = find_movie(movie_id)
     existing["title"] = movie.title
@@ -67,7 +69,7 @@ def replace_movie(movie_id: int, movie: Movie):
     existing["year"] = movie.year
     return existing
 
-@app.delete("/movies/{movie_id}", status_code=204)
+@app.delete("/movies/{movie_id}", status_code=204, dependencies=[Depends(check_key)])
 def delete_movie(movie_id: int):
     movie = find_movie(movie_id)
     movies.remove(movie)
@@ -78,7 +80,7 @@ class MovieUpdate(BaseModel):
     director: str | None = None
     year: int | None = None
 
-@app.patch("/movies/{movie_id}")
+@app.patch("/movies/{movie_id}", dependencies=[Depends(check_key)])
 def update_movie(movie_id: int, movie_update: MovieUpdate):
     existing = find_movie(movie_id)
     if movie_update.title is not None:
