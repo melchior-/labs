@@ -1,7 +1,17 @@
+import os
+
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 app = FastAPI()
+
+load_dotenv()  # Load environment variables from .env file
+api_key = os.getenv("API_KEY")  # Get the API key from environment variables API key from environment variables
+
+def check_key(provided_key: str):
+    if provided_key != api_key:
+        raise HTTPException(status_code=403, detail="Invalid API key")
 
 def find_movie(movie_id: int):
     for movie in movies:
@@ -79,7 +89,7 @@ def update_movie(movie_id: int, movie_update: MovieUpdate):
         existing["year"] = movie_update.year
     return existing
 
-
+# PUT is used to replace the entire resource, while PATCH is used to update only specific fields of the resource.
 
 
 
