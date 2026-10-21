@@ -63,5 +63,24 @@ def delete_movie(movie_id: int):
     movies.remove(movie)
     return {"message": "Movie deleted successfully"}
 
+class MovieUpdate(BaseModel):
+    title: str | None = None
+    director: str | None = None
+    year: int | None = None
+
+@app.patch("/movies/{movie_id}")
+def update_movie(movie_id: int, movie_update: MovieUpdate):
+    existing = find_movie(movie_id)
+    if movie_update.title is not None:
+        existing["title"] = movie_update.title
+    if movie_update.director is not None:
+        existing["director"] = movie_update.director
+    if movie_update.year is not None:
+        existing["year"] = movie_update.year
+    return existing
+
+
+
+
 
 
