@@ -37,6 +37,9 @@ Exercise 5
 What is the difference between the Sprint Review and the Sprint Retrospective? Who takes part in
 each?
 
+Sprint Review: Discuss what will happen next. Participants are Scrum Team with customers and managers-
+Sprint Retrospective: Reflect on how well the team worked together. Participants are scrum team with developers.
+
 
 Exercise 6
 Rewrite these backlog items as user stories (As a ..., I want ..., so that ...):
@@ -44,16 +47,58 @@ a) Add login
 b) Export orders to Excel
 c) Dark mode
 
+a) As an admin, I want to add login, so that I can manage my users.
+b) As a manager, I want to export orders to Excel, so that I can create visual statistics.
+c) As a user, I want dark mode, so that I can browse the computer in a color scheme that suits me.
+
 
 Exercise 7
 Write three acceptance criteria for this story: As a customer, I want to see my order history, so
 that I can buy the same thing again.
 
+The customer can view a list of their previous orders after logging in.
+Each order displays the order date, items purchased, quantities, and total price.
+The customer can select a previous order and add the same items to their shopping cart to buy them again.
+
 
 Exercise 8
 Write a Definition of Done for a team of four developers. Include at least five points.
+
+A task or feature is considered Done when all of the following criteria are met:
+1. Code completed: The code is written and follows the team's coding standards.
+2. Code reviewed: At least one other developer has reviewed and approved the code.
+3. Tests passed: All relevant automated tests pass, and new functionality has appropriate tests.
+4. No known critical bugs: No known critical or high-priority bugs remain.
+5. Documentation updated: Relevant documentation is updated to reflect the changes.
+6. Integrated: The code is merged into the main branch without conflicts.
+7. Acceptance criteria met: The feature meets all agreed acceptance criteria.
+8. Tested by the team: The feature has been tested in a test environment and works as expected.
+All four developers are responsible for following the Definition of Done. A feature cannot be considered Done until it meets all the agreed criteria.
 
 
 Exercise 9
 A team's Daily Scrum takes 45 minutes. Everyone stands facing the manager and reports what
 they did. What is wrong, and what would you suggest?
+
+The Daily Scrum should be limited to 15 minutes, but this meeting takes 45 minutes.
+Team members report to the manager instead of collaborating with each other.
+The focus is on what people did, rather than progress toward the Sprint Goal and identifying obstacles.
+The manager appears to be controlling the meeting, but the Daily Scrum is an event for the Developers.
+
+Exercise 10
+Scrum or Kanban? Choose for each team and explain why.
+a) A team building a new mobile app
+b) An IT support desk
+c) A team fixing bugs in a webshop that is already live
+
+a) Scrum — A team building a new mobile app can work in two-week sprints, set goals, and deliver new features incrementally.
+
+b) Kanban — An IT support desk receives requests continuously and needs to prioritize and handle tasks as they arrive.
+
+c) Kanban — A team fixing bugs in a live webshop needs to respond to issues as they occur, rather than waiting for the next sprint.
+
+Exercise 11
+In planning poker, four developers show 2, 3, 3 and 13 for the same story. What should the team
+do next?
+
+The team should discuss why their estimates are so different.
