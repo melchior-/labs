@@ -116,5 +116,13 @@ def update_movie(movie_id: int, movie_update: MovieUpdate):
 # What would go wrong if two users added a movie at the same time? How would you fix it?
 # There would be a race condition.
 
+# As a customer,
+# I want to add products to my shopping cart and complete my purchase online,
+# so that I can conveniently order the products I want.
+
+# As a shop employee,
+# I want to view and manage customer orders,
+# so that I can process and fulfill orders efficiently.
+
 
 
